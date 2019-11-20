@@ -1,0 +1,94 @@
+.testimonial-card {
+  background-color: rgba($color-white, 0.7);
+  width: 45%;
+
+  margin: 0 auto;
+  padding: 5rem 10rem;
+  box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+
+  transform: skewX(-10deg);
+
+  // 1200px
+  @include respond(75em) {
+    width: 50%;
+  }
+
+  // 700px
+  @include respond(43.75em) {
+    transform: skewX(0);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10rem;
+
+    // 700px
+    @include respond(43.75em) {
+      margin-bottom: 5rem;
+    }
+  }
+  &__avi {
+    width: 17rem;
+    height: 17rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    overflow: hidden;
+
+    transform: skewX(10deg) translate(-4rem, -2rem);
+
+    // 700px
+    @include respond(43.75em) {
+      transform: skewX(0) translate(-4rem, -2rem);
+    }
+
+    position: relative;
+  }
+
+  &__img {
+    height: 113%;
+    transition: all 0.5s;
+    transform: translate(-6rem, -1rem) scale(1.2);
+    filter: blur(0) brightness(100%);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transition: all 0.5s;
+    transform: translate(-50%, 150%);
+
+    opacity: 0;
+
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  &:hover &__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  &:hover &__img {
+    transform: translate(-6rem, -1rem) scale(0.9);
+    filter: blur(2px) brightness(90%);
+  }
+
+  &__heading {
+    transform: skewX(10deg);
+
+    // 700px
+    @include respond(43.75em) {
+      transform: skewX(0);
+    }
+  }
+
+  &__text {
+    transform: skewX(10deg);
+    font-size: $font-size-default;
+    line-height: 2.5rem;
+  }
+}

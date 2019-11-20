@@ -1,0 +1,32 @@
+.feature-card {
+  background-color: rgba($color-background, 0.9);
+  text-align: center;
+  padding: 3rem 3rem;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+
+  transition: all 0.3s;
+
+  // 1200px
+  @include respond(75em) {
+    margin: 2rem 0;
+  }
+
+  &__icon {
+    display: inline-block;
+    @include gradient-primary-text;
+    font-size: 7rem;
+  }
+
+  &__text {
+    font-size: $font-size-default;
+    font-weight: 400;
+    color: $text-color-dark;
+    line-height: 2.2rem;
+  }
+
+  &:hover {
+    transform: scale(1.05) translateY(-2rem);
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
+  }
+}

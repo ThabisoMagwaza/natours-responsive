@@ -1,0 +1,24 @@
+.text-center {
+  text-align: center !important;
+}
+
+.mb-large {
+  margin-bottom: 8rem !important;
+
+  // 1200px
+  @include respond(75em) {
+    margin-bottom: 6rem !important;
+  }
+}
+
+.mb-medium {
+  margin-bottom: 6rem !important;
+}
+
+.mb-small {
+  margin-bottom: 4rem !important;
+}
+
+.mb-xsmall {
+  margin-bottom: 2rem !important;
+}

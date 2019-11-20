@@ -1,0 +1,81 @@
+body {
+  font-size: $font-size-default;
+  font-family: "Lato", "Sans-serif";
+  font-weight: 400;
+  color: $text-color-dark;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  &--large {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    margin-bottom: 1rem;
+
+    animation: moveInLeft 1s cubic-bezier(0.17, 0.67, 0.29, 1.09);
+
+    // 700px
+    @include respond(43.75em) {
+      font-size: 4rem;
+    }
+  }
+  &--small {
+    display: block;
+    font-size: 2.2rem;
+    letter-spacing: 1.65rem;
+    font-weight: 700;
+
+    animation: moveInRight 1s cubic-bezier(0.17, 0.67, 0.29, 1.09);
+
+    // 700px
+    @include respond(43.75em) {
+      font-size: 1.8rem;
+      letter-spacing: 1.4rem;
+    }
+  }
+}
+
+.heading-secondary {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  display: inline-block;
+
+  // 700px
+  @include respond(43.75em) {
+    font-size: 3rem;
+  }
+
+  @include gradient-primary-text;
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform: skew(3deg, 3deg) scale(1.05);
+    text-shadow: 0 1rem 2rem rgba($color-black, 0.25);
+  }
+}
+
+.heading-tertiary {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: $text-color-dark;
+  word-spacing: 0.3rem;
+}
+
+.body-text {
+  font-weight: 400;
+  font-size: $font-size-default;
+  color: $text-color-dark;
+  width: 90%;
+  line-height: 2.5rem;
+
+  // 1200px
+  @include respond(75em) {
+    margin: 0 auto;
+    width: 75%;
+  }
+}

@@ -1,0 +1,190 @@
+.price-card {
+  height: 50rem;
+  width: 80%;
+
+  // 1200px
+  @include respond(75em) {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  position: relative;
+
+  -webkit-perspective: 10px;
+  perspective: 150rem;
+
+  &__side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    box-shadow: 0 1rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+
+    backface-visibility: hidden;
+    transition: all 1s;
+
+    //  FUNCTIONALITY
+    &--front {
+      background-color: $color-white;
+
+      transform: rotateY(0);
+    }
+
+    &--back {
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+
+      transform: rotateY(180deg);
+      position: relative;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // CONTENT - FRONT
+
+  &__header {
+    width: 100%;
+    height: 20rem;
+
+    background-blend-mode: screen;
+    background-size: cover;
+    background-position: center;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url("../img/nat-5.jpg");
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url("../img/nat-6.jpg");
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url("../img/nat-7.jpg");
+    }
+  }
+
+  &__heading {
+    color: $color-white;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-align: right;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 12rem;
+    right: 2.5rem;
+  }
+
+  &__span {
+    padding: 0.5rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-tertiary-dark, 0.8)
+      );
+    }
+  }
+
+  &__list {
+    width: 85%;
+    list-style: none;
+    text-align: center;
+    margin: 0 auto;
+    li {
+      font-size: $font-size-default;
+      padding: 2rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-background;
+      }
+    }
+  }
+
+  // CONTENT - BACK
+
+  &__price {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    span {
+      display: block;
+      color: $color-white;
+    }
+  }
+
+  &__only {
+    font-size: 1.5rem;
+  }
+
+  &__amount {
+    font-size: 6rem;
+    font-weight: 100;
+
+    margin-bottom: 10rem;
+  }
+}

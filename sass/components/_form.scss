@@ -1,0 +1,134 @@
+.form {
+  padding: 5rem 5rem;
+
+  &__group {
+    width: 37%;
+
+    // 1600px
+    @include respond(100em) {
+      width: 40%;
+    }
+    // 1600px
+    @include respond(75em) {
+      width: 50%;
+    }
+    // 700px
+    @include respond(43.75em) {
+      width: 90%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  // TEXT INPUT
+  &__text-input {
+    width: 100%;
+    display: block;
+
+    padding: 2rem 2.5rem;
+    border: none;
+    border-radius: 3px;
+    border-bottom: 3px solid transparent;
+
+    font-size: 1.5rem;
+    font-family: inherit;
+
+    transition: all 0.1s;
+
+    &:focus {
+      outline: none;
+
+      &:valid {
+        border-bottom: 3px solid $color-primary;
+      }
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+
+    &::placeholder {
+      font-weight: 700;
+      color: $text-color-light;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 1rem 0 0 2rem;
+
+    transition: all 0.3s;
+
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__text-input:placeholder-shown + &__label {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+
+  // RADIO INPUT
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 3px solid $color-primary;
+    display: inline-block;
+
+    position: absolute;
+    top: -1rem;
+    left: -4.5rem;
+
+    margin-right: 1rem;
+  }
+
+  &__radio-label {
+    cursor: pointer;
+    font-size: $font-size-default;
+    font-family: inherit;
+    position: relative;
+    margin-left: 4rem;
+
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+
+    // 1850px
+    @include respond(115.625em) {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    // 700px
+    @include respond(43.75em) {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 8em;
+      }
+    }
+  }
+
+  &__radio-input:checked + &__radio-label &__radio-btn::after {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+
+    @include absCenter;
+  }
+}
