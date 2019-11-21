@@ -134,6 +134,20 @@
       padding: 1rem 3rem;
       color: $color-white;
       font-weight: 300;
+      width: 100%;
+
+      // 700px
+      @include respond(43.75em) {
+        font-size: 2.5rem;
+      }
+      // 700px
+      @include respond(31.25em) {
+        font-size: 2.2rem;
+      }
+      // 400px
+      @include respond(25em) {
+        font-size: 2.5rem;
+      }
 
       transition: all 0.3s;
       background-image: linear-gradient(
@@ -147,6 +161,10 @@
 
       span {
         margin-right: 1.5rem;
+
+        @include respond(25em) {
+          margin-right: 1rem;
+        }
       }
     }
 
@@ -181,5 +199,9 @@
   &__checkbox:checked ~ &__nav &__list {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+
+    @include respond(25em) {
+      width: 60%;
+    }
   }
 }

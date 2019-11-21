@@ -54,7 +54,9 @@ body {
 
 .heading-primary {
   color: #fff;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center; }
   .heading-primary--large {
     display: block;
     font-size: 6rem;
@@ -656,11 +658,24 @@ body {
   padding: 1rem 3rem;
   color: #fff;
   font-weight: 300;
+  width: 100%;
   transition: all 0.3s;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
   background-size: 220%; }
+  @media (max-width: 43.75em) {
+    .round-nav__link:link, .round-nav__link:visited {
+      font-size: 2.5rem; } }
+  @media (max-width: 31.25em) {
+    .round-nav__link:link, .round-nav__link:visited {
+      font-size: 2.2rem; } }
+  @media (max-width: 25em) {
+    .round-nav__link:link, .round-nav__link:visited {
+      font-size: 2.5rem; } }
   .round-nav__link:link span, .round-nav__link:visited span {
     margin-right: 1.5rem; }
+    @media (max-width: 25em) {
+      .round-nav__link:link span, .round-nav__link:visited span {
+        margin-right: 1rem; } }
 
 .round-nav__link:hover, .round-nav__link:active {
   background-position: 100%;
@@ -686,6 +701,9 @@ body {
 .round-nav__checkbox:checked ~ .round-nav__nav .round-nav__list {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1; }
+  @media (max-width: 25em) {
+    .round-nav__checkbox:checked ~ .round-nav__nav .round-nav__list {
+      width: 60%; } }
 
 .popup {
   position: fixed;
