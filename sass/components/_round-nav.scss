@@ -18,6 +18,15 @@
     border-radius: 50%;
 
     z-index: 2000;
+
+    // 700px
+    @include respond(43.75em) {
+      top: 2rem;
+      right: 3rem;
+
+      width: 6rem;
+      height: 6rem;
+    }
   }
 
   &__hamburger {
@@ -28,6 +37,13 @@
     display: inline-block;
 
     position: relative;
+
+    // 700px
+    @include respond(43.75em) {
+      margin-top: 3rem;
+      width: 3.2rem;
+      height: 2px;
+    }
 
     &::before,
     &::after {
@@ -40,6 +56,12 @@
       left: 0;
 
       transition: all 0.4s;
+
+      // 700px
+      @include respond(43.75em) {
+        width: 3.2rem;
+        height: 2px;
+      }
     }
 
     &::before {
@@ -69,6 +91,14 @@
     z-index: 1000;
 
     transition: all 0.2s cubic-bezier(0, 0.57, 0.94, 0.54);
+
+    // 700px
+    @include respond(43.75em) {
+      top: 2.3rem;
+      right: 3.2rem;
+      width: 5.5rem;
+      height: 5.5rem;
+    }
   }
 
   &__nav {

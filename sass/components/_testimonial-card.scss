@@ -16,13 +16,14 @@
   // 700px
   @include respond(43.75em) {
     transform: skewX(0);
+    padding: 3rem 6rem;
   }
 
   &:not(:last-child) {
     margin-bottom: 10rem;
 
-    // 700px
-    @include respond(43.75em) {
+    // 900px
+    @include respond(56.25em) {
       margin-bottom: 5rem;
     }
   }
@@ -38,7 +39,15 @@
 
     // 700px
     @include respond(43.75em) {
-      transform: skewX(0) translate(-4rem, -2rem);
+      transform: skewX(0) translate(-3rem, 0rem);
+    }
+
+    // 400px
+    @include respond(25em) {
+      float: none;
+      display: block;
+      margin-left: 5rem;
+      margin-bottom: 2rem;
     }
 
     position: relative;
@@ -84,11 +93,26 @@
     @include respond(43.75em) {
       transform: skewX(0);
     }
+
+    // 400px
+    @include respond(25em) {
+      text-align: center;
+    }
   }
 
   &__text {
     transform: skewX(10deg);
     font-size: $font-size-default;
     line-height: 2.5rem;
+
+    // 700px
+    @include respond(43.75em) {
+      transform: skewX(0);
+    }
+
+    // 400px
+    @include respond(25em) {
+      text-align: center;
+    }
   }
 }

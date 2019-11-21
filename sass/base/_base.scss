@@ -2,7 +2,7 @@ html {
   font-size: 62.5%; // 1rem = 10px
 
   // 1200px
-  @include respond(75em) {
+  @include respond(81.25em) {
     font-size: 56.25%; // 1rem = 9px
   }
 

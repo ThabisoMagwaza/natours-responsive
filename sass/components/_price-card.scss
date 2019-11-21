@@ -1,11 +1,18 @@
 .price-card {
   height: 50rem;
   width: 80%;
+  margin: 0 auto;
 
   // 1200px
   @include respond(75em) {
     width: 100%;
     margin-top: 3rem;
+  }
+
+  // 900px
+  @include respond(56.25em) {
+    width: 75%;
+    // margin-top: 3rem;
   }
 
   position: relative;
